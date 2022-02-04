@@ -1,7 +1,7 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { TransactionContext } from "../contexts/TransactionsContext";
 export default function TransferForm() {
-  const { connectWallet, accounts, formData, sendTransaction, handleChange } =
+  const { formData, sendTransaction, handleChange } =
     useContext(TransactionContext);
 
   const handleSubmit = (e) => {
@@ -13,12 +13,10 @@ export default function TransferForm() {
     } else return;
   };
   const InputStyle =
-    "mx-auto w-9/10 bg-slate-800 rounded-lg p-2 text-white outline-none";
-  useEffect(() => {
-    connectWallet();
-  }, []);
+    "mx-auto lg:w-9/10 w-3/4 bg-slate-800 rounded-lg p-2 text-white outline-none";
+
   return (
-    <div className="bg-slate-900 w-5/6 mx-auto py-10 rounded-2xl flex flex-col justify-center">
+    <div className="bg-slate-900 lg:w-5/6 w-full mx-auto py-10 rounded-2xl flex flex-col justify-center">
       <div className="flex flex-col space-y-2">
         <input
           type="text"

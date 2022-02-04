@@ -1,32 +1,14 @@
 /* eslint-disable no-lone-blocks */
-import { useContext, useEffect } from "react";
-import { TransactionContext } from "./contexts/TransactionsContext";
 import "./App.css";
 import { Navbar, Hero, Services, Footer } from "./components";
 function App() {
-  const { connectWallet, accounts, formData, sendTransaction, handleChange } =
-    useContext(TransactionContext);
-
-  const handleSubmit = (e) => {
-    const { addressTo, amount, keyword, message } = formData;
-    console.log(formData);
-    e.preventDefault();
-    if (addressTo && amount && keyword && message) {
-      sendTransaction();
-    } else return;
-  };
-
-  useEffect(() => {
-    connectWallet();
-  }, []);
   return (
     <div
-      className="bg-black text-white"
+      className="gradient-bg-welcome flex flex-col text-white"
       style={{ fontFamily: "Poppins,sans-serif" }}
     >
       <Navbar />
       <Hero />
-      <Services />
       <Footer />
     </div>
   );

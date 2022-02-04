@@ -20,7 +20,7 @@ const getEthereumContract = () => {
 };
 
 export const TransactionProvider = ({ children }) => {
-  const [accounts, setAccounts] = useState([]);
+  const [accounts, setAccounts] = useState("");
   const [transactionCount, setTransactionCount] = useState([]);
   const [formData, setFormData] = useState({
     addressTo: "",
@@ -31,7 +31,6 @@ export const TransactionProvider = ({ children }) => {
   const isConnected = async () => {
     if (!ethereum) return alert("Install Metamask");
     const accounts = await ethereum.request({ method: "eth_accounts" });
-    console.log(accounts);
   };
 
   const connectWallet = async () => {
