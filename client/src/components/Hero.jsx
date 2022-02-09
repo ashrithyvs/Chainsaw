@@ -16,7 +16,7 @@ export default function Hero() {
           </h2>
           <span className="font-light">
             Explore the crypto world. Buy and Sell <br /> cryptocurrencies
-            easily on Krypto.
+            easily on Chainsaw.
           </span>
           {accounts ? (
             <span className="font-medium">Connected to MetaMask Wallet!</span>
